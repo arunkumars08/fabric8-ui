@@ -48,6 +48,8 @@ export class StackDetailsComponent implements OnInit {
 
   private stackAnalysisRawData: any = {};
 
+  private recommendations: Array<any> = [];
+
 
   constructor(
     public fb: FormBuilder,
@@ -61,6 +63,24 @@ export class StackDetailsComponent implements OnInit {
   ngOnInit() {
     this.getStackAnalyses(this.stack.uuid);
     this.setStackAnalysisRawData();
+
+    this.recommendations = [
+      {
+        suggestion: 'Recommended',
+        action: 'Upgrade',
+        message: 'Vertx Web applications have different version'
+      },
+      {
+        suggestion: 'Recommended',
+        action: 'Downgrade',
+        message: 'Vertx Web applications have different version'
+      },
+      {
+        suggestion: 'Recommended',
+        action: 'Remove',
+        message: 'Vertx Web applications have different version'
+      }
+    ];
 
     this.currentStackHeaders = [
       'name',

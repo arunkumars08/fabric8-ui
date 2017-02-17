@@ -14,6 +14,7 @@ import { ContainerTogglerModule } from 'ngx-widgets';
 import { Stack } from '../../../models/stack';
 import { StackRecommendationModule } from '../stack-recommendation/stack-recommendation.module';
 import { StackDetailsComponent } from './stack-details.component';
+import { RecommenderModule } from '../recommender/recommender.module';
 
 describe('StackDetailsComponent', () => {
   let component: StackDetailsComponent;
@@ -33,6 +34,7 @@ describe('StackDetailsComponent', () => {
               DataTableModule,
               ModalModule,
               StackRecommendationModule,
+              RecommenderModule,
               HttpModule,
               ReactiveFormsModule
               ],
