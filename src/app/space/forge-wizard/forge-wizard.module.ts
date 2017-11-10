@@ -29,6 +29,8 @@ import { TokenProvider } from 'ngx-forge';
 import { AuthenticationService } from 'ngx-login-client';
 import { KeycloakTokenProvider } from './service/token-provider';
 
+import { CreateStackComponent } from './create-stack-wizard/create-stack.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -57,12 +59,14 @@ import { KeycloakTokenProvider } from './service/token-provider';
     PipelineQuickstartStepComponent,
     ReviewStepComponent,
     ChooseQuickstartComponent,
-    ForgeExceptionComponent
+    ForgeExceptionComponent,
+    CreateStackComponent
   ],
   exports: [
     ForgeImportWizardComponent,
     ForgeQuickstartComponent,
-    FlowSelectorComponent
+    FlowSelectorComponent,
+    CreateStackComponent
   ],
   providers: [
     {

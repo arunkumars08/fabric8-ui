@@ -16,7 +16,7 @@
   </div>
   <div class="row">
     <div class="col-sm-12 panel">
-      <div id="importCodeButton" class="col-sm-6 panel-item" (click)="select('import')">
+      <div id="importCodeButton" class="col-sm-4 panel-item" (click)="select('import')">
         <ul class="action-panel-list">
           <li>
             <h3>Import existing <b>code</b></h3>
@@ -26,10 +26,20 @@
           </li>
         </ul>
       </div>
-      <div id="forgeQuickStartButton" class="col-sm-6 panel-item" (click)="select('quickstart')">
+      <div id="forgeQuickStartButton" class="col-sm-4 panel-item" (click)="select('quickstart')">
         <ul class="action-panel-list">
           <li>
             <h3>Create a new <b>Quickstart</b> project</h3>
+          </li>
+          <li>
+            <i class="pficon fa-3x pficon-screen"></i>
+          </li>
+        </ul>
+      </div>
+      <div id="createYourOwnStackButton" class="col-sm-4 panel-item" (click)="select('createstack')">
+        <ul class="action-panel-list">
+          <li>
+            <h3>Create <b>your own stack</b></h3>
           </li>
           <li>
             <i class="pficon fa-3x pficon-screen"></i>
