@@ -30,7 +30,7 @@ import { AuthenticationService } from 'ngx-login-client';
 import { KeycloakTokenProvider } from './service/token-provider';
 
 import { CreateStackComponent } from './create-stack-wizard/create-stack.component';
-import { MachineStacksModule } from 'machine';
+// import { MachineStacksModule } from 'machine';
 
 @NgModule({
   imports: [
@@ -38,7 +38,6 @@ import { MachineStacksModule } from 'machine';
     ReactiveFormsModule,
     WizardModule,
     FilterModule,
-    MachineStacksModule,
     NgxForgeModule
   ],
   declarations: [
