@@ -31,6 +31,9 @@ export class ChooseQuickstartComponent implements OnInit {
       fields: fields
     } as FilterConfig;
     this.filteredInput = new ForgeInput(this.gui.inputs[0]);
+    console.log('@@@@@@@@@@@@@@@@@@@@');
+    console.log(this.gui);
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@');
     this.reset();
   }
 

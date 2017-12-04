@@ -3,6 +3,12 @@ import { WizardStepConfig } from 'patternfly-ng';
 export function configureSteps(): WizardStepConfig[] {
   let steps: WizardStepConfig[] = [];
   steps.push({
+    id: 'GettingStarted',
+    priority: 1,
+    allowClickNav: false,
+    title: 'Getting Started'
+  } as WizardStepConfig);
+  steps.push({
     id: 'stack',
     priority: 1,
     allowClickNav: false,
