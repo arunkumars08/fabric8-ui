@@ -45,4 +45,5 @@
   <flow-selector (onSelect)="selectFlow($event)" (onCancel)="closeModal()" [space]="space.attributes.name" *ngIf="!selectedFlow"></flow-selector>
   <import-wizard (onCancel)="closeModal()" *ngIf="selectedFlow === 'import'"></import-wizard>
   <quickstart-wizard (onCancel)="closeModal()" *ngIf="selectedFlow === 'quickstart'"></quickstart-wizard>
+  <create-stack-wizard (onCancel)="closeModal()" [style.display]="selectedFlow !== 'createstack' ? 'none': ''"></create-stack-wizard>
 </ng-template>

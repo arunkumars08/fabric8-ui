@@ -22,6 +22,10 @@ export class FlowSelectorComponent {
         this.onSelect.emit({flow: flow});
         break;
       }
+      case 'createstack': {
+        this.onSelect.emit({flow: flow});
+        break;
+      }
       default: {
         // TODO close modal and navigate;
         break;

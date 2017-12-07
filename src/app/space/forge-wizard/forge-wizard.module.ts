@@ -29,6 +29,8 @@ import { TokenProvider } from 'ngx-forge';
 import { AuthenticationService } from 'ngx-login-client';
 import { KeycloakTokenProvider } from './service/token-provider';
 import { FormatNameValidationPipe } from './quickstart-pages/step2/project-name-validation.pipe';
+import { MachineStacksModule } from 'machine';
+import { CreateStackComponent } from './create-stack-wizard/create-stack.component';
 
 @NgModule({
   imports: [
@@ -36,7 +38,8 @@ import { FormatNameValidationPipe } from './quickstart-pages/step2/project-name-
     ReactiveFormsModule,
     WizardModule,
     FilterModule,
-    NgxForgeModule
+    NgxForgeModule,
+    MachineStacksModule
   ],
   declarations: [
     ForgeImportWizardComponent,
@@ -56,6 +59,7 @@ import { FormatNameValidationPipe } from './quickstart-pages/step2/project-name-
     RepositoriesComponent,
     BuildConfigStepComponent,
     PipelineStepComponent,
+    CreateStackComponent,
     PipelineQuickstartStepComponent,
     ReviewStepComponent,
     ChooseQuickstartComponent,
@@ -64,6 +68,7 @@ import { FormatNameValidationPipe } from './quickstart-pages/step2/project-name-
   exports: [
     ForgeImportWizardComponent,
     ForgeQuickstartComponent,
+    CreateStackComponent,
     FlowSelectorComponent
   ],
   providers: [
