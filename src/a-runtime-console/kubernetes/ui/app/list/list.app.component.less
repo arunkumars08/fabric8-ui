@@ -1,4 +1,8 @@
  @import (reference) '../../../../../assets/stylesheets/shared/osio.less';
+
+@import (less) '../../../../../../node_modules/primeng/resources/themes/redmond/theme.css';
+@import (less) '../../../../../../node_modules/primeng/resources/primeng.min.css';
+
 .openshift-console-link-panel a {
   padding-top: 28px;
   display: block;
@@ -26,4 +30,19 @@
 .app-icon {
   height: 30px;
   width: 30px;
+}
+
+.modal-width-class {
+  width: 95%;
+  .modal-content {
+    min-height: 1000px;
+  }
+}
+
+.machine-notification {
+  position: absolute;
+  right: 10px;
+  padding: 0px 5px;
+  background: ORANGE;
+  color: #fff;
 }

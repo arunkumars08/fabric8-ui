@@ -91,7 +91,8 @@ export class AppListPageComponent extends AbstractWatchComponent implements OnIn
 
 
   get apps(): Observable<AppDeployments[]> {
-    return this.appsSubject.asObservable();
+    let ob = this.appsSubject.asObservable();
+    return ob;
   }
 
 
@@ -108,6 +109,25 @@ export class AppListPageComponent extends AbstractWatchComponent implements OnIn
   }
 
   protected onDeployments(space: Space, environment: Environment, deployments: DeploymentViews) {
+
+    let machineConfigs: any = {
+      'machine-ui': {
+        icon: 'icon',
+        name: 'machine app',
+        environmentDetails: {
+          deployment: {
+            availableReplicas: 2,
+            startingReplicas: 1,
+            terminatingReplicas: 2
+          },
+          exposeUrl: 'url',
+          version: '0.0.0'
+        }
+      }
+    };
+
+    this.appsSubject.next([machineConfigs['machine-ui']]);
+
     if (!deployments) {
       return;
     }
@@ -155,6 +175,10 @@ export class AppListPageComponent extends AbstractWatchComponent implements OnIn
         array.push(app);
       }
     }
+
+    
+
+    console.log(array);
 
     this.appsSubject.next(array);
 

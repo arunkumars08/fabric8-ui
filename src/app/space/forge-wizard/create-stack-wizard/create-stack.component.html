@@ -11,11 +11,6 @@
           <machine-stacks></machine-stacks>
         </span>
       </pfng-wizard-substep>
-      <pfng-wizard-substep [config]="steps[5]">
-        <span *ngSwitchCase="'Fabric8: Project Info'">
-          <tree-table></tree-table>
-        </span>
-      </pfng-wizard-substep>
     </pfng-wizard-step>
       <pfng-wizard-step [config]="steps[1]">
         <spinner [loading]="isLoading"></spinner>

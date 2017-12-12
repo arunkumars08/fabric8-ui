@@ -22,6 +22,8 @@ import {AppListPageComponent} from "./list-page/list-page.app.component";
 import {AppListComponent} from "./list/list.app.component";
 import {AppRoutingModule} from "./app-routing.module";
 
+import {MachineStacksModule} from 'machine';
+
 @NgModule({
   imports: [
     BsDropdownModule.forRoot(),
@@ -39,6 +41,7 @@ import {AppRoutingModule} from "./app-routing.module";
     EventModule,
     PodModule,
     ReplicaSetModule,
+    MachineStacksModule,
     ServiceModule,
   ],
   declarations: [

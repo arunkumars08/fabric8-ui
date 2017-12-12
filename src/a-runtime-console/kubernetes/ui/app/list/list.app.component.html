@@ -28,10 +28,11 @@
           </div>
         </div>
       </div>
-      <div class="row" *ngFor="let app of apps">
+      <div class="row" *ngFor="let app of machineApps">
         <div class="app-env-info-panel-row">
           <div class="col-md-2">
-            <div class="card-pf card-pf-accented card-pf-aggregate-status">
+            <div (click)="openMachineDialog(app)" class="card-pf card-pf-accented card-pf-aggregate-status">
+              <span *ngIf="app.notification" class="machine-notification" [innerHTML]="app.notification && app.notification.value"></span>
               <h2 class="card-pf-title">
                 <i *ngIf="!app.icon" class="fa fa-cubes"></i>
                 <img *ngIf="app.icon" class='app-icon' src="{{app.icon}}"/>
@@ -84,6 +85,11 @@
                          title="View the application in this environment in another browser tab">
                         Application
                       </a>
+                    </li>
+                    <li *ngIf="envInfo.exposeUrl" class="divider"></li>
+                    <li>
+                      <a (click)="openMachineDialog()"
+                         title="Machine Generated Stack">Machine</a>
                     </li>
                     <li *ngIf="envInfo.exposeUrl" class="divider"></li>
                     <li>
@@ -152,6 +158,12 @@
 <modal #deleteDeploymentModal title="Delete Deployment">
   <modal-content>
     <delete-deployment-dialog></delete-deployment-dialog>
+  </modal-content>
+</modal>
+
+<modal modalClass="modal-lg modal-fullscreen modal-width-class" #machineStackModal title="Machine Generated Stacks">
+  <modal-content>
+    <machine-stacks [read]="read"></machine-stacks>
   </modal-content>
 </modal>
 

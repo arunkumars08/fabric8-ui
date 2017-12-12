@@ -6,19 +6,13 @@ export function configureSteps(): WizardStepConfig[] {
     id: 'stack',
     priority: 1,
     allowClickNav: false,
-    title: 'Choose Your Dependencies'
-  } as WizardStepConfig);
-  steps.push({
-    id: 'stack',
-    priority: 1,
-    allowClickNav: false,
-    title: 'Specify Deployment Options'
+    title: 'Design'
   } as WizardStepConfig);
   steps.push({
     id: 'deployment',
     priority: 2,
     allowClickNav: false,
-    title: 'Deployment'
+    title: 'Build Pipeline'
   } as WizardStepConfig);
   steps.push({
     id: 'summary',

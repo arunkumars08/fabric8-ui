@@ -127,6 +127,7 @@ export class EnvironmentWidgetComponent extends AbstractWatchComponent  implemen
     if (!deployments) {
       return;
     }
+    debugger;
     let envNameToIndexMap = new Map<string,number>();
     let count = 1;
     for (let env of space.environments) {
