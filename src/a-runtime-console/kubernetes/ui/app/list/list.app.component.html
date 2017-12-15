@@ -28,14 +28,14 @@
           </div>
         </div>
       </div>
-      <div class="row" *ngFor="let app of machineApps">
+      <div class="row" *ngFor="let app of machineApps; let i = index;">
         <div class="app-env-info-panel-row">
           <div class="col-md-2">
-            <div (click)="openMachineDialog(app)" class="card-pf card-pf-accented card-pf-aggregate-status">
+            <div (click)="openMachineDialog(app, i)" class="card-pf card-pf-accented card-pf-aggregate-status">
               <span *ngIf="app.notification" class="machine-notification" [innerHTML]="app.notification && app.notification.value"></span>
               <h2 class="card-pf-title">
                 <i *ngIf="!app.icon" class="fa fa-cubes"></i>
-                <img *ngIf="app.icon" class='app-icon' src="{{app.icon}}"/>
+                <img *ngFor="let icon of app.icon" class='app-icon' src="{{icon}}"/>
               </h2>
               <div class="card-pf-body">
                 <div class="card-pf-aggregate-status-notifications">
@@ -163,7 +163,7 @@
 
 <modal modalClass="modal-lg modal-fullscreen modal-width-class" #machineStackModal title="Machine Generated Stacks">
   <modal-content>
-    <machine-stacks [read]="read"></machine-stacks>
+    <machine-stacks [read]="machineRead"></machine-stacks>
   </modal-content>
 </modal>
 

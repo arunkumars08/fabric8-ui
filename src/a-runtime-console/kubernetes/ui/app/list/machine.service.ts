@@ -12,7 +12,7 @@ export class AppService {
   constructor(private http: Http) {}
 
   public readConfiguration (): Observable<any> {
-    let url: string = 'https://gist.githubusercontent.com/arunkumars08/72d5acbefcff5a8b488fe69326354ecb/raw/465e199f518ff2b9d3207cd6999bbe422da1242b/read-containers.json';
+    let url: string = 'https://gist.githubusercontent.com/arunkumars08/46ccf79425485ed0b830ea5c7cb0c0e9/raw/8cb620635057158239cbcecd9352fa057c470815/read-containers.json';
     let body: any = {};
     // Change to POST once integrated with service
     return this    .http

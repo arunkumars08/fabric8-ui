@@ -23,7 +23,8 @@ export class AppListComponent {
   @Input() space: Space;
 
   public machineApps: Array<any> = [];
-  public read: any;
+  public read: Array<any> = [];
+  public machineRead: any;
 
 
   @ViewChild(DeploymentDeleteDialog) deleteDialog: DeploymentDeleteDialog;
@@ -35,32 +36,47 @@ export class AppListComponent {
     parentLinkFactory: ParentLinkFactory,
   ) {
     this.parentLink = parentLinkFactory.parentLink;
-    this.machineApps = [{
-      icon: 'icon1',
-      name: 'Openshift App',
-      notification: {
-        value: 3
-      },
-      environmentDetails: [{
-        deployment: {
-          availableReplicas: 3,
-          startingReplicas: 1,
-          terminatingReplicas: 1
+    
+    this.appService.readConfiguration().subscribe((result) => {
+      this.read = result;
+      
+
+      this.machineApps = [{
+        icon: [],
+        name: 'Openshift App',
+        notification: {
+          value: 3
         },
-        version: '0.0.0'
-      }]
-    }, {
-      icon: 'icon2',
-      name: 'AWS App',
-      environmentDetails: [{}, {
-        deployment: {
-          availableReplicas: 3,
-          startingReplicas: 1,
-          terminatingReplicas: 1
-        },
-        version: '0.0.1'
-      }]
-    }];
+        environmentDetails: [{
+          deployment: {
+            availableReplicas: 3,
+            startingReplicas: 1,
+            terminatingReplicas: 1
+          },
+          version: '0.0.0'
+        }]
+      }, {
+        icon: [],
+        name: 'AWS App',
+        environmentDetails: [{}, {
+          deployment: {
+            availableReplicas: 3,
+            startingReplicas: 1,
+            terminatingReplicas: 1
+          },
+          version: '0.0.1'
+        }]
+      }];
+      let i = 0;
+      this.read.forEach((r) => {
+        this.machineApps[i].name = r.name;
+        r.containers.forEach((c) => {
+          this.machineApps[i]['icon'].push(c.icon);
+        });
+        i ++;
+      });
+
+    });
   }
 
   openDeleteDialog(deleteDeploymentModal, deployment) {
@@ -69,11 +85,9 @@ export class AppListComponent {
     deleteDeploymentModal.open();
   }
 
-  openMachineDialog(app: any) {
-    this.appService.readConfiguration().subscribe((result) => {
-      this.read = result;
-      this.machineStackModal.open();
-    });
+  openMachineDialog(app: any, i: number) {
+    this.machineRead = this.read[i];
+    this.machineStackModal.open();
   }
 
   openScaleDialog(scaleDeploymentModal, deployment) {
