@@ -48,7 +48,7 @@ export FABRIC8_WIT_API_URL=https://api.openshift.io/api/
 export FABRIC8_AUTH_API_URL=https://auth.openshift.io/api/
 
 
-export FABRIC8_FORGE_API_URL="https://forge.api.openshift.io"
+export FABRIC8_FORGE_API_URL="https://forge.api.prod-preview.openshift.io"
 
 # this URL is used in dev mode only, for now feature-toggles.service.ts used WIT url as a proxy
 #export FABRIC8_FEATURE_TOGGLES_API_URL=http://localhost:8080/api/
