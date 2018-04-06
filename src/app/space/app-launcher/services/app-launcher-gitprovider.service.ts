@@ -47,14 +47,18 @@ export class AppLauncherGitproviderService implements GitProviderService {
    */
   link(provider: string, redirect: string): void {
     let linkURL = this.linkUrl + '?for=' + provider + '&redirect=' +  encodeURIComponent(redirect) ;
-    this.http
-    .get(linkURL)
+    this.options.flatMap((option) => {
+      option.headers.delete('X-App');
+      option.headers.delete('x-git-provider');
+    return this.http
+    .get(linkURL, option)
     .map(response => {
       let redirectInfo = response.json() as any;
       this.redirectToAuth(redirectInfo.redirect_location);
     })
     .catch((error) => {
       return this.handleError(error);
+    });
     }).subscribe();
   }
 
