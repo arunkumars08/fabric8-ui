@@ -42,8 +42,8 @@ export FABRIC8_AUTH_API_URL=https://auth.openshift.io/api/
 export FABRIC8_FORGE_API_URL="https://forge.api.openshift.io"
 
 # Below variables have to be set explicitly during development
-export ANALYTICS_RECOMMENDER_URL=""
-export ANALYTICS_LICENSE_URL=""
+export ANALYTICS_RECOMMENDER_URL="https://recommender.api.openshift.io/"
+export ANALYTICS_LICENSE_URL="https://license-analysis.api.openshift.io/"
 
 # this URL is used in dev mode only, for now feature-toggles.service.ts used WIT url as a proxy
 #export FABRIC8_FEATURE_TOGGLES_API_URL=http://localhost:8080/api/
